@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div class="mb-4">
+    <h1>{{ .Title }}</h1>
+    {{ if .Content }}
+    <div class="lead">
+        {{ .Content }}
+    </div>
+    {{ end }}
+</div>
+
+{{ if .Pages }}
+<div class="row">
+    {{ range .Pages }}
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="{{ .Permalink }}" class="text-decoration-none">{{ .Title }}</a>
+                </h5>
+                {{ if .Summary }}
+                <p class="card-text">{{ .Summary }}</p>
+                {{ end }}
+                {{ if .Date }}
+                <p class="card-text">
+                    <small class="text-muted">
+                        <i class="fas fa-calendar me-2"></i>{{ .Date.Format "2006年1月2日" }}
+                    </small>
+                </p>
+                {{ end }}
+                <a href="{{ .Permalink }}" class="btn btn-primary btn-sm">阅读更多</a>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+</div>
+{{ else }}
+<div class="alert alert-info">
+    <i class="fas fa-info-circle me-2"></i>暂无内容
+</div>
+{{ end }}
+{{ end }}

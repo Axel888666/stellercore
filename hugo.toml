@@ -1,0 +1,113 @@
+baseURL = 'https://stellercore.github.io'
+languageCode = 'zh-cn'
+title = '星核动力科技（深圳）有限公司'
+defaultContentLanguage = 'zh-cn'
+
+# 启用 emoji 支持
+enableEmoji = true
+
+# 禁用Hugo模块
+disableKinds = []
+
+[params]
+  github_repo = 'https://github.com/stellercore/stellercore.github.io'
+  github_branch = 'main'
+  
+  # 公司信息
+  company_name = "星核动力科技（深圳）有限公司"
+  company_slogan = "智能核心，驱动未来"
+  company_description = "专注于核心技术研发与创新应用的高科技企业"
+  
+  # 联系信息
+  contact_email = "info@stellercore.com"
+  contact_phone = "+86-755-8888-8888"
+  contact_address = "深圳市南山区高新技术产业园"
+  
+  # SEO 设置
+  meta_description = "星核动力科技专注于企业数字化转型，提供大数据、云计算、人工智能解决方案"
+  meta_keywords = "星核动力,数字化转型,大数据,云计算,人工智能,深圳科技公司"
+  
+  # UI 配置
+  [params.ui]
+    sidebar_menu_compact = true
+    breadcrumb_disable = false
+    navbar_logo = true
+    navbar_translucent_over_cover_disable = false
+    footer_about_disable = false
+    
+  # 搜索配置
+  [params.search]
+    algolia = false
+    
+  # 版本信息
+  version_menu = "版本"
+  version = "v1.0"
+  
+  # 社交链接
+  [params.links]
+    [[params.links.user]]
+      name = "微信公众号"
+      url = "#"
+      icon = "fab fa-weixin"
+      desc = "关注我们的微信公众号"
+    [[params.links.user]]
+      name = "微博"
+      url = "#"
+      icon = "fab fa-weibo"
+      desc = "关注我们的微博"
+    [[params.links.developer]]
+      name = "GitHub"
+      url = "https://github.com/stellercore"
+      icon = "fab fa-github"
+      desc = "开源项目"
+    [[params.links.developer]]
+      name = "邮箱"
+      url = "mailto:info@stellercore.com"
+      icon = "fa fa-envelope"
+      desc = "联系我们"
+
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    name = "产品与服务"
+    url = "/products/"
+    weight = 20
+  [[menu.main]]
+    name = "解决方案"
+    url = "/solutions/"
+    weight = 30
+  [[menu.main]]
+    name = "技术支持"
+    url = "/support/"
+    weight = 40
+  [[menu.main]]
+    name = "关于我们"
+    url = "/about/"
+    weight = 50
+  [[menu.main]]
+    name = "联系我们"
+    url = "/contact/"
+    weight = 60
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"
+    lineNos = true
+
+[author]
+  name = "星核动力科技"
+  homepage = "https://stellercore.github.io"
+
+# 多语言支持（预留）
+[languages]
+  [languages.zh-cn]
+    title = "星核动力科技（深圳）有限公司"
+    description = "智能核心，驱动未来"
+    languageName = "中文"
+    weight = 1

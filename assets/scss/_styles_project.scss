@@ -1,0 +1,202 @@
+// 星核动力科技自定义样式
+
+// 导航栏样式
+.td-navbar {
+  background: $brand-gradient;
+  border-bottom: 2px solid $stellercore-accent;
+  
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white !important;
+  }
+  
+  .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 500;
+    
+    &:hover {
+      color: white !important;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+  }
+}
+
+// 首页封面样式
+.td-cover {
+  background: $brand-gradient;
+  
+  h1 {
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .lead {
+    font-size: 1.25rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+}
+
+// 特性块样式
+.td-box--primary {
+  background: $brand-gradient;
+  
+  .fas {
+    color: $stellercore-accent;
+  }
+}
+
+// 卡片样式
+.card {
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-title {
+    color: $stellercore-blue;
+    font-weight: 600;
+  }
+}
+
+// 按钮样式
+.btn-primary {
+  background: $brand-gradient;
+  border: none;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 6px;
+  
+  &:hover {
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(30, 58, 138, 0.3);
+  }
+}
+
+.btn-secondary {
+  background-color: $stellercore-gray;
+  border: none;
+  color: white;
+  font-weight: 600;
+  
+  &:hover {
+    background-color: darken($stellercore-gray, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+// 页脚样式
+.td-footer {
+  background: $dark;
+  color: $light;
+  
+  a {
+    color: $stellercore-accent;
+    
+    &:hover {
+      color: lighten($stellercore-accent, 20%);
+    }
+  }
+}
+
+// 内容区域样式
+.td-content {
+  h1, h2, h3, h4, h5, h6 {
+    color: $stellercore-blue;
+    font-weight: 600;
+  }
+  
+  h1 {
+    border-bottom: 3px solid $stellercore-accent;
+    padding-bottom: 10px;
+  }
+  
+  h2 {
+    border-left: 4px solid $stellercore-accent;
+    padding-left: 15px;
+  }
+}
+
+// 侧边栏样式
+.td-sidebar {
+  background-color: $light;
+  border-right: 1px solid rgba(30, 58, 138, 0.1);
+  
+  .td-sidebar-nav {
+    .td-sidebar-link {
+      color: $stellercore-blue;
+      
+      &:hover {
+        background-color: rgba(30, 58, 138, 0.1);
+        color: $stellercore-blue;
+      }
+      
+      &.active {
+        background-color: $stellercore-accent;
+        color: white;
+      }
+    }
+  }
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .td-cover {
+    h1 {
+      font-size: 2rem;
+    }
+    
+    .lead {
+      font-size: 1rem;
+    }
+  }
+  
+  .btn-lg {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+// 动画效果
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+// 图标样式
+.fas, .fab {
+  color: $stellercore-accent;
+}
+
+// 表格样式
+.table {
+  th {
+    background-color: $stellercore-blue;
+    color: white;
+    border: none;
+  }
+  
+  td {
+    border-color: rgba(30, 58, 138, 0.1);
+  }
+  
+  tbody tr:hover {
+    background-color: rgba(30, 58, 138, 0.05);
+  }
+}

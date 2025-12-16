@@ -1,0 +1,28 @@
+# Hugo 构建输出
+/public/
+/resources/
+
+# 依赖和缓存
+node_modules/
+.npm
+.cache/
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# 编辑器文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 日志文件
+*.log
+
+# 临时文件
+*.tmp
+*.temp
+
+# Hugo 模块缓存
+go.sum

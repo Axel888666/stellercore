@@ -1,0 +1,53 @@
+{{ $cover := and (.HasShortcode "blocks/cover") (not .Site.Params.ui.navbar_translucent_over_cover_disable) }}
+<nav class="js-navbar-scroll navbar navbar-expand{{ if .Site.Params.ui.navbar_fullwidth }}-xl{{ else }}-lg{{ end }} navbar-dark flex-column flex-md-row td-navbar">
+  <div class="{{ if .Site.Params.ui.navbar_fullwidth }}container-fluid{{ else }}container{{ end }}">
+    <a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
+      {{- /**/ -}}
+      {{- with .Site.Params.ui.navbar_logo -}}
+        {{ if (eq (printf "%T" .) "string") }}
+          {{ . | safeHTML }}
+        {{ else }}
+          <img src="{{ .url }}" width="{{ .width | default 30 }}" height="{{ .height | default 30 }}" class="d-inline-block align-top" alt="{{ .alt | default .Site.Title }}">
+        {{ end }}
+      {{- else -}}
+        <span class="text-uppercase font-weight-bold">{{ .Site.Title }}</span>
+      {{- end -}}
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="navbar-nav ml-auto">
+        {{ $p := . }}
+        {{ range .Site.Menus.main }}
+          <li class="nav-item">
+            <a class="nav-link{{ if $p.IsMenuCurrent "main" . }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+          </li>
+        {{ end }}
+        
+        {{ if .Site.Params.versions }}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{ .Site.Params.version }}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {{ range .Site.Params.versions }}
+                <a class="dropdown-item" href="{{ .url }}">{{ .version }}</a>
+              {{ end }}
+            </div>
+          </li>
+        {{ end }}
+        
+        {{ if .Site.Params.github_repo }}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ .Site.Params.github_repo }}" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</nav>
