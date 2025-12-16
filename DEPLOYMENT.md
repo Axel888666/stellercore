@@ -23,13 +23,41 @@
 - 部署完成后，网站将在以下地址可访问：
   **https://axel888666.github.io/stellercore.github.io/**
 
-### 3. 自定义域名（可选）
+### 3. 域名说明
 
-如果需要使用自定义域名（如 www.stellercore.com）：
+**为什么URL是 `axel888666.github.io/stellercore.github.io/` 而不是 `stellercore.github.io/`？**
 
-1. 在 **Settings** > **Pages** 中设置 **Custom domain**
-2. 在DNS提供商处添加CNAME记录指向 `axel888666.github.io`
-3. 等待DNS传播完成
+GitHub Pages的URL规则：
+- 用户页面: `https://username.github.io/` (仓库名必须是 `username.github.io`)
+- 项目页面: `https://username.github.io/repository-name/` (当前情况)
+
+### 4. 获得自定义域名的选项
+
+**选项A: 使用自定义域名（推荐）**
+1. 购买域名 `stellercore.com`
+2. 在 **Settings** > **Pages** 中设置 **Custom domain** 为 `stellercore.com`
+3. 在DNS提供商处添加以下记录：
+   ```
+   类型: CNAME
+   名称: www
+   值: axel888666.github.io
+   
+   类型: A
+   名称: @
+   值: 185.199.108.153
+        185.199.109.153
+        185.199.110.153
+        185.199.111.153
+   ```
+
+**选项B: 创建用户页面仓库**
+1. 创建新仓库 `Axel888666.github.io`
+2. 移动代码到新仓库
+3. URL将变为 `https://axel888666.github.io/`
+
+**选项C: 保持当前URL**
+- 当前URL `https://axel888666.github.io/stellercore.github.io/` 完全可用
+- 适合作为项目展示页面
 
 ## 网站特性
 
