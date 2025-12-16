@@ -9,8 +9,11 @@ enableEmoji = true
 # 禁用Hugo模块
 disableKinds = []
 
+# 使用自定义布局而不是主题
+# theme = 'docsy'
+
 [params]
-  github_repo = 'https://github.com/stellercore/stellercore.github.io'
+  github_repo = 'https://github.com/Axel888666/stellercore.github.io'
   github_branch = 'main'
   
   # 公司信息
@@ -57,7 +60,7 @@ disableKinds = []
       desc = "关注我们的微博"
     [[params.links.developer]]
       name = "GitHub"
-      url = "https://github.com/stellercore"
+      url = "https://github.com/Axel888666"
       icon = "fab fa-github"
       desc = "开源项目"
     [[params.links.developer]]
